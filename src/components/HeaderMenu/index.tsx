@@ -7,10 +7,7 @@ export function HeaderMenu() {
   return (
     <Stack direction="row" sx={styles.container}>
       <Box>
-        <Typography
-          sx={{ fontSize: 26, color: "white", fontWeight: 700 }}
-          component="h1"
-        >
+        <Typography href="/" sx={styles.logo} component="a">
           FUTLIVE
         </Typography>
       </Box>

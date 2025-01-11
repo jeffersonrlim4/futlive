@@ -15,5 +15,11 @@ export function useStyles() {
       textTransform: "capitalize",
       ":hover": { textDecoration: "underline" },
     },
+    logo: {
+      fontSize: 26,
+      color: "white",
+      fontWeight: 700,
+      textDecoration: "none",
+    },
   } satisfies SxThemeProps;
 }

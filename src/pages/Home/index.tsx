@@ -2,6 +2,7 @@ import { CardMatches } from "@components/CardMatches";
 import { HeaderMenu } from "@components/HeaderMenu";
 import { Box, Grid2, Stack, Typography } from "@mui/material";
 import { useStyles } from "./styles";
+import { Footer } from "@components/Footer";
 
 export function HomePage() {
   const styles = useStyles();
@@ -26,6 +27,7 @@ export function HomePage() {
           </Grid2>
         </Box>
       </Stack>
+      <Footer />
     </>
   );
 }
