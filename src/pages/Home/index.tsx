@@ -1,14 +1,12 @@
 import { CardMatches } from "@components/CardMatches";
-import { HeaderMenu } from "@components/HeaderMenu";
 import { Box, Grid2, Stack, Typography } from "@mui/material";
 import { useStyles } from "./styles";
-import { Footer } from "@components/Footer";
+import { RootLayout } from "@components/RootLayout";
 
 export function HomePage() {
   const styles = useStyles();
   return (
-    <>
-      <HeaderMenu />
+    <RootLayout>
       <Stack sx={styles.container} spacing={4}>
         <Box>
           <Typography variant="h5">Partidas do Dia</Typography>
@@ -27,7 +25,6 @@ export function HomePage() {
           </Grid2>
         </Box>
       </Stack>
-      <Footer />
-    </>
+    </RootLayout>
   );
 }

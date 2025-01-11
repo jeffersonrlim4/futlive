@@ -1,5 +1,10 @@
+import { RootLayout } from "@components/RootLayout";
 import { Typography } from "@mui/material";
 
 export function RankingPage() {
-  return <Typography>RankingPage</Typography>;
+  return (
+    <RootLayout>
+      <Typography>RankingPage</Typography>
+    </RootLayout>
+  );
 }
