@@ -1,12 +1,14 @@
-import { CssBaseline, Typography } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import { router } from "./routes";
 
 function App() {
   return (
     <Provider store={store}>
       <CssBaseline />
-      <Typography component="h1">Olá Futlive</Typography>
+      <RouterProvider router={router} />
     </Provider>
   );
 }
