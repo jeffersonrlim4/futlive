@@ -39,7 +39,7 @@ export function CardMatches() {
           </Stack>
         </CardContent>
         <CardActions sx={styles.cardActionContainer}>
-          <Button onClick={() => navigate("/details")} sx={styles.button}>
+          <Button onClick={() => navigate("/detalhes")} sx={styles.button}>
             Ver detalhes
           </Button>
         </CardActions>

@@ -18,7 +18,7 @@ export function HeaderMenu() {
         <Link href="/ranking" sx={styles.link}>
           RANKING
         </Link>
-        <Link href="/details" sx={styles.link}>
+        <Link href="/campeonato" sx={styles.link}>
           CAMPEONATOS
         </Link>
       </Stack>
