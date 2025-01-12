@@ -2,8 +2,18 @@ import { CardMatches } from "@components/CardMatches";
 import { Box, Grid2, Stack, Typography } from "@mui/material";
 import { RootLayout } from "@components/RootLayout";
 import { NextMatches } from "@components/NextMatches";
+import { useGetAllDadosPartida } from "@hooks/endpoints/dadosPartida/useGet/useGetAllDadosPartida";
 
 export function HomePage() {
+  const {
+    data: dadosPartida,
+    isError: isErrorDadosPartida,
+    isLoading: isLoadingDadosPartida,
+  } = useGetAllDadosPartida();
+  console.log("🚀 ~ HomePage ~ isLoadingDadosPartida:", isLoadingDadosPartida);
+  console.log("🚀 ~ HomePage ~ isErrorDadosPartida:", isErrorDadosPartida);
+  console.log("🚀 ~ HomePage ~ dadosPartida:", dadosPartida);
+
   return (
     <RootLayout>
       <Stack spacing={4}>
