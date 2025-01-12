@@ -1,10 +1,10 @@
+import { ResultMatch } from "@components/ResultMatch";
 import { RootLayout } from "@components/RootLayout";
-import { Typography } from "@mui/material";
 
 export function DetailsPage() {
   return (
     <RootLayout>
-      <Typography>DetailsPage</Typography>
+      <ResultMatch />
     </RootLayout>
   );
 }
