@@ -8,12 +8,14 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { teamsImage } from "@constants/teams";
 
-const botafogoImg = "https://escudosfc.com.br/images/botafogo.gif";
-const saoPauloImg = "https://escudosfc.com.br/images/saopaulo.png";
+interface NextMatchesProps {
+  data: INextMatches;
+}
 
-export function NextMatches({ Texto }: INextMatches) {
-  const team = Texto.split(" ");
+export function NextMatches({ data }: NextMatchesProps) {
+  const team = data.Texto.split(" ");
   const styles = useStyles();
   return (
     <Grid2 size={4}>
@@ -22,7 +24,11 @@ export function NextMatches({ Texto }: INextMatches) {
           <Stack direction="row" sx={styles.container} spacing={5}>
             <Stack direction="row" sx={styles.centerSpacing} spacing={4}>
               <Stack sx={styles.centerSpacing} spacing={1}>
-                <Box component="img" src={botafogoImg} sx={styles.imgTeam} />
+                <Box
+                  component="img"
+                  src={teamsImage[team[0] as keyof typeof teamsImage]}
+                  sx={styles.imgTeam}
+                />
                 <Typography>{team[0]}</Typography>
               </Stack>
             </Stack>
@@ -31,7 +37,15 @@ export function NextMatches({ Texto }: INextMatches) {
 
             <Stack direction="row" sx={styles.centerSpacing} spacing={4}>
               <Stack sx={styles.centerSpacing} spacing={1}>
-                <Box component="img" src={saoPauloImg} sx={styles.imgTeam} />
+                <Box
+                  component="img"
+                  src={
+                    teamsImage[
+                      team.slice(2).join(" ") as keyof typeof teamsImage
+                    ]
+                  }
+                  sx={styles.imgTeam}
+                />
                 <Typography>{team.slice(2).join(" ")}</Typography>
               </Stack>
             </Stack>

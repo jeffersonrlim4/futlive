@@ -21,6 +21,7 @@
       "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"],
       "@store/*": ["src/store/*"],
+      "@constants/*": ["src/constants/*"],
     },
 
     /* Bundler mode */
@@ -38,8 +39,5 @@
   },
   "include": [
     "src",
-    "jest.config.ts",
-    "**/*.ts",
-    "**/*.tsx"
   ]
 }

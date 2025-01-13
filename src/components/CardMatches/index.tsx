@@ -11,30 +11,41 @@ import {
 } from "@mui/material";
 import { useStyles } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { ITodayGames } from "src/@types/ITodayGames";
+import { teamsImage } from "@constants/teams";
 
-const botafogoImg = "https://escudosfc.com.br/images/botafogo.gif";
-const saoPauloImg = "https://escudosfc.com.br/images/saopaulo.png";
+interface CardMatchesProps {
+  data: ITodayGames;
+}
 
-export function CardMatches() {
+export function CardMatches({ data }: CardMatchesProps) {
   const styles = useStyles();
   const navigate = useNavigate();
 
   return (
     <Grid2 size={4}>
       <Card sx={styles.cardContainer}>
-        <Chip label="Ao Vivo" sx={styles.live} />
+        {data.Status === "Ao vivo" && <Chip label="Ao Vivo" sx={styles.live} />}
         <CardContent sx={styles.cardContentContainer}>
           <Stack direction="row" sx={styles.container} spacing={3}>
             <Stack sx={styles.leftTeam}>
-              <Box component="img" src={saoPauloImg} sx={styles.imgTeam} />
-              <Typography>São Paulo</Typography>
-              <Typography>3</Typography>
+              <Box
+                component="img"
+                src={teamsImage[data.Equipe1]}
+                sx={styles.imgTeam}
+              />
+              <Typography>{data.Equipe1}</Typography>
+              <Typography>{data.GolsEquipe1}</Typography>
             </Stack>
             <Typography>x</Typography>
             <Stack sx={styles.rightTeam}>
-              <Box component="img" src={botafogoImg} sx={styles.imgTeam} />
-              <Typography>Botafogo</Typography>
-              <Typography>1</Typography>
+              <Box
+                component="img"
+                src={teamsImage[data.Equipe2]}
+                sx={styles.imgTeam}
+              />
+              <Typography>{data.Equipe2}</Typography>
+              <Typography>{data.GolsEquipe2}</Typography>
             </Stack>
           </Stack>
         </CardContent>

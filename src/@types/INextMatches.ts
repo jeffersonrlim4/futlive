@@ -1,5 +1,5 @@
 export interface INextMatches {
   Texto: string;
-  Codigo?: string;
-  Selected?: boolean;
+  Codigo: string;
+  Selected: boolean;
 }
