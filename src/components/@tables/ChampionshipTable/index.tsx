@@ -6,6 +6,7 @@ import {
 } from "material-react-table";
 import { useMemo, useState } from "react";
 import { IClassification } from "src/@types/IClassification";
+import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
 
 export function ChampionshipTable() {
   const [globalFilter, setGlobalFilter] = useState("");
@@ -16,150 +17,38 @@ export function ChampionshipTable() {
       {
         accessorKey: "Posicao",
         header: "Posição",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
       },
       {
         accessorKey: "Equipe",
         header: "Equipe",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
       },
       {
         accessorKey: "Pontos",
-        header: "Pontos",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "P",
       },
       {
         accessorKey: "Jogos",
-        header: "Jogos",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "J",
       },
       {
         accessorKey: "Vitorias",
-        header: "Vitórias",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "V",
       },
       {
         accessorKey: "Empates",
-        header: "Empates",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "E",
       },
       {
         accessorKey: "Derrotas",
-        header: "Derrotas",
-        size: 10,
+        header: "D",
       },
       {
         accessorKey: "GolsPro",
-        header: "Gols",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "GP",
       },
       {
         accessorKey: "SaldoGols",
-        header: "Saldo de gols",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
-      },
-      {
-        accessorKey: "CartoesAmarelos",
-        header: "Cartões amarelos",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
-      },
-      {
-        accessorKey: "CartoesVermelhos",
-        header: "Cartões vermelhos",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
-      },
-      {
-        accessorKey: "Aproveitamento",
-        header: "Aproveitamento",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
-      },
-      {
-        accessorKey: "Movimentacao",
-        header: "Movimentação",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
-      },
-      {
-        accessorKey: "MediaPontos",
-        header: "Media de pontos",
-        size: 10,
-        muiTableBodyCellProps: {
-          sx: { textAlign: "center" },
-        },
-        muiTableHeadCellProps: {
-          sx: { textAlign: "center" },
-        },
+        header: "SG",
       },
     ],
     []
@@ -168,6 +57,18 @@ export function ChampionshipTable() {
   const table = useMaterialReactTable({
     columns,
     data: dadosPartida?.data.ClassificacaoGrupo[0].Classificacao ?? [],
+    defaultColumn: {
+      size: 10,
+      muiTableBodyCellProps: { sx: { textAlign: "center" } },
+      muiTableHeadCellProps: {
+        sx: {
+          ".Mui-TableHeadCell-Content": {
+            justifyContent: "center",
+          },
+        },
+      },
+    },
+    localization: MRT_Localization_PT_BR,
     enableFullScreenToggle: false,
     enableDensityToggle: false,
     enableColumnFilters: false,
