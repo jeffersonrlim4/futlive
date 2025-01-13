@@ -26,7 +26,7 @@ export function CardMatches({ data }: CardMatchesProps) {
   const dispatch = useAppDispatch();
 
   return (
-    <Grid2 size={4}>
+    <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
       <Card sx={styles.cardContainer}>
         {data.Status === "Ao vivo" && <Chip label="Ao Vivo" sx={styles.live} />}
         <CardContent sx={styles.cardContentContainer}>

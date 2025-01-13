@@ -18,7 +18,7 @@ export function NextMatches({ data }: NextMatchesProps) {
   const team = data.Texto.split(" ");
   const styles = useStyles();
   return (
-    <Grid2 size={4}>
+    <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
       <Card>
         <CardContent>
           <Stack direction="row" sx={styles.container} spacing={5}>

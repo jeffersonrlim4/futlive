@@ -9,7 +9,7 @@ export function ResultMatch() {
     (selector) => selector.detailsMatch.selectedTeam
   );
   return (
-    <Stack direction="row" sx={styles.container} spacing={5}>
+    <Stack direction="row" sx={styles.container}>
       <Stack direction="row" sx={styles.centerSpacing} spacing={4}>
         <Stack sx={styles.centerSpacing} spacing={1}>
           <Box
@@ -17,22 +17,26 @@ export function ResultMatch() {
             src={teamsImage[selectedTeam.Equipe1 as keyof typeof teamsImage]}
             sx={styles.imgTeam}
           />
-          <Typography variant="h4">{selectedTeam.Equipe1}</Typography>
+          <Typography sx={styles.text}>{selectedTeam.Equipe1}</Typography>
         </Stack>
-        <Typography variant="h3">{selectedTeam.GolsEquipe1}</Typography>
+        <Typography sx={styles.textResult}>
+          {selectedTeam.GolsEquipe1}
+        </Typography>
       </Stack>
 
-      <Typography variant="h4">x</Typography>
+      <Typography sx={styles.textResult}>x</Typography>
 
       <Stack direction="row" sx={styles.centerSpacing} spacing={4}>
-        <Typography variant="h3">{selectedTeam.GolsEquipe2}</Typography>
+        <Typography sx={styles.textResult}>
+          {selectedTeam.GolsEquipe2}
+        </Typography>
         <Stack sx={styles.centerSpacing} spacing={1}>
           <Box
             component="img"
             src={teamsImage[selectedTeam.Equipe2 as keyof typeof teamsImage]}
             sx={styles.imgTeam}
           />
-          <Typography variant="h4">{selectedTeam.Equipe2}</Typography>
+          <Typography sx={styles.text}>{selectedTeam.Equipe2}</Typography>
         </Stack>
       </Stack>
     </Stack>
