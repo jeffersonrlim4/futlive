@@ -69,7 +69,7 @@ export function ChampionshipTable() {
         header: "SG",
       },
     ],
-    []
+    [styles]
   );
 
   const table = useMaterialReactTable({
