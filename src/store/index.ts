@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { dadosPartidaSliceReducer } from "./reducers/dadosPartida";
 
 const store = configureStore({
   reducer: {
-    // TODO: Adicionar reducers aqui
+    dadosPartida: dadosPartidaSliceReducer,
   },
 });
 
