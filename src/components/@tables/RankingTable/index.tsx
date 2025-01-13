@@ -1,3 +1,4 @@
+import { useGetAllDadosPartida } from "@hooks/endpoints/dadosPartida/useGet/useGetAllDadosPartida";
 import {
   MRT_ColumnDef,
   MaterialReactTable,
@@ -6,26 +7,9 @@ import {
 import { useMemo, useState } from "react";
 import { ITopScore } from "src/@types/ITopScorer";
 
-const topScorer: ITopScore[] = [
-  {
-    Gols: 15,
-    Jogador: "Alerrandro",
-    Equipe: "Vitória",
-  },
-  {
-    Gols: 15,
-    Jogador: "Yuri Alberto",
-    Equipe: "Corinthians",
-  },
-  {
-    Gols: 13,
-    Jogador: "Estêvão",
-    Equipe: "Palmeiras",
-  },
-];
-
 export function RankingTable() {
   const [globalFilter, setGlobalFilter] = useState("");
+  const { data: dadosPartida } = useGetAllDadosPartida();
 
   const columns = useMemo<MRT_ColumnDef<ITopScore>[]>(
     () => [
@@ -47,7 +31,7 @@ export function RankingTable() {
 
   const table = useMaterialReactTable({
     columns,
-    data: topScorer,
+    data: dadosPartida?.data.Artilharia ?? [],
     enableFullScreenToggle: false,
     enableDensityToggle: false,
     enableColumnFilters: false,

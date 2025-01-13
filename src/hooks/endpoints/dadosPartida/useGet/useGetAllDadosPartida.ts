@@ -12,6 +12,5 @@ export const useGetAllDadosPartida = () => {
     },
     queryKey: ["scout", "dadosPartida"],
     refetchOnWindowFocus: false,
-    retry: 3,
   });
 };
