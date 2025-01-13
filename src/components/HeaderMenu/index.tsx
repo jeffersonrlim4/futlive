@@ -1,5 +1,6 @@
-import { Box, Stack, Typography, Link } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { useStyles } from "./styles";
+import { Link } from "react-router-dom";
 
 export function HeaderMenu() {
   const styles = useStyles();
@@ -7,19 +8,19 @@ export function HeaderMenu() {
   return (
     <Stack direction="row" sx={styles.container}>
       <Box>
-        <Typography href="/" sx={styles.logo} component="a">
+        <Link to="/" style={styles.logo}>
           FUTLIVE
-        </Typography>
+        </Link>
       </Box>
       <Stack direction="row" gap={4}>
-        <Link href="/" sx={styles.link}>
-          PARTIDAS
+        <Link to="/" style={styles.link}>
+          <Typography sx={styles.linkText}>PARTIDAS</Typography>
         </Link>
-        <Link href="/ranking" sx={styles.link}>
-          RANKING
+        <Link to="/ranking" style={styles.link}>
+          <Typography sx={styles.linkText}>RANKING</Typography>
         </Link>
-        <Link href="/campeonato" sx={styles.link}>
-          CAMPEONATOS
+        <Link to="/campeonato" style={styles.link}>
+          <Typography sx={styles.linkText}>CAMPEONATOS</Typography>
         </Link>
       </Stack>
     </Stack>

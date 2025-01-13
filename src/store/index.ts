@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { dadosPartidaSliceReducer } from "./reducers/dadosPartida";
+import { detailsMatchSliceReducer } from "./reducers/detailsMatch";
 
 const store = configureStore({
   reducer: {
     dadosPartida: dadosPartidaSliceReducer,
+    detailsMatch: detailsMatchSliceReducer,
   },
 });
 

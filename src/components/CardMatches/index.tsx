@@ -13,6 +13,8 @@ import { useStyles } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { ITodayGames } from "src/@types/ITodayGames";
 import { teamsImage } from "@constants/teams";
+import { useAppDispatch } from "@store/hooks";
+import { updateDetailsMatch } from "@store/reducers/detailsMatch";
 
 interface CardMatchesProps {
   data: ITodayGames;
@@ -21,6 +23,7 @@ interface CardMatchesProps {
 export function CardMatches({ data }: CardMatchesProps) {
   const styles = useStyles();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <Grid2 size={4}>
@@ -50,7 +53,13 @@ export function CardMatches({ data }: CardMatchesProps) {
           </Stack>
         </CardContent>
         <CardActions sx={styles.cardActionContainer}>
-          <Button onClick={() => navigate("/detalhes")} sx={styles.button}>
+          <Button
+            onClick={() => {
+              dispatch(updateDetailsMatch(data));
+              navigate("/detalhes");
+            }}
+            sx={styles.button}
+          >
             Ver detalhes
           </Button>
         </CardActions>

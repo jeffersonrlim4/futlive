@@ -10,6 +10,9 @@ export function useStyles() {
       justifyContent: "space-between",
     },
     link: {
+      textDecoration: "none",
+    },
+    linkText: {
       color: "white",
       textDecoration: "none",
       textTransform: "capitalize",
