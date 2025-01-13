@@ -7,8 +7,12 @@ import {
 import { useMemo, useState } from "react";
 import { IClassification } from "src/@types/IClassification";
 import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
+import { Stack, Typography } from "@mui/material";
+import { teamsImage } from "@constants/teams";
+import { useStyles } from "./styles";
 
 export function ChampionshipTable() {
+  const styles = useStyles();
   const [globalFilter, setGlobalFilter] = useState("");
   const { data: dadosPartida } = useGetAllDadosPartida();
 
@@ -21,6 +25,20 @@ export function ChampionshipTable() {
       {
         accessorKey: "Equipe",
         header: "Equipe",
+        Cell: ({ cell }) => {
+          const { Equipe } = cell.row.original;
+          return (
+            <Stack direction="row" spacing={2} sx={styles.team}>
+              <img
+                src={teamsImage[Equipe as keyof typeof teamsImage]}
+                alt={Equipe}
+                width={20}
+                height={20}
+              />
+              <Typography>{Equipe}</Typography>
+            </Stack>
+          );
+        },
       },
       {
         accessorKey: "Pontos",

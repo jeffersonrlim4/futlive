@@ -35,7 +35,7 @@ export function ResultTable() {
         header: "Total",
       },
     ],
-    []
+    [selectedTeam]
   );
 
   const table = useMaterialReactTable({
