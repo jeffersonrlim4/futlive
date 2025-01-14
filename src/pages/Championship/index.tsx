@@ -1,4 +1,4 @@
-import { ChampionshipTable } from "@components/@tables/ChampionshipTable";
+import { ChampionshipTable } from "@components/Tables/ChampionshipTable";
 import { RootLayout } from "@components/RootLayout";
 import { Box, Stack, Typography } from "@mui/material";
 import { useStyles } from "./styles";

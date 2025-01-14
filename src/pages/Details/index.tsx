@@ -1,5 +1,5 @@
 import { ResultMatch } from "@components/ResultMatch";
-import { ResultTable } from "@components/@tables/ResultTable";
+import { ResultTable } from "@components/Tables/ResultTable";
 import { RootLayout } from "@components/RootLayout";
 import { Stack } from "@mui/material";
 

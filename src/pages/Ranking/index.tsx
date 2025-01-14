@@ -1,4 +1,4 @@
-import { RankingTable } from "@components/@tables/RankingTable";
+import { RankingTable } from "@components/Tables/RankingTable";
 import { RootLayout } from "@components/RootLayout";
 import { Box, Stack, Typography } from "@mui/material";
 import { useStyles } from "./styles";
