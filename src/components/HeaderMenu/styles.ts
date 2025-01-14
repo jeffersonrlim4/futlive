@@ -10,12 +10,12 @@ export function useStyles() {
       paddingX: 20,
       alignItems: "center",
       justifyContent: "space-between",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         paddingX: 5,
       },
     },
     btnResponsive: {
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         display: "none",
       },
     },
@@ -38,6 +38,14 @@ export function useStyles() {
       color: "white",
       fontWeight: 700,
       textDecoration: "none",
+    },
+    menuIcon: {
+      color: "white",
+    },
+    drawerBox: {
+      width: 250,
+      padding: 2,
+      paddingTop: 5,
     },
   } satisfies SxThemeProps;
 }
