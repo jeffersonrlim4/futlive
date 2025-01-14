@@ -7,8 +7,12 @@ export const useGetAllDadosPartida = () => {
 
   return useQuery({
     queryFn: async () => {
-      const requests = await get<IMatchDataResponse>({ params: { teste: 1 } });
-      return requests;
+      try {
+        const requests = await get<IMatchDataResponse>();
+        return requests;
+      } catch {
+        alert("Api Error");
+      }
     },
     queryKey: ["scout", "dadosPartida"],
     refetchOnWindowFocus: false,
