@@ -6,5 +6,8 @@ export function useStyles() {
       justifyContent: "center",
       padding: 4,
     },
+    title: {
+      textAlign: "center",
+    },
   } satisfies SxThemeProps;
 }

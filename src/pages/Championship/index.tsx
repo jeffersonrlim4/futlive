@@ -10,7 +10,9 @@ export function ChampionshipPage() {
     <RootLayout>
       <Box>
         <Stack sx={styles.container} direction="row">
-          <Typography variant="h4">Campeonato Brasileiro A</Typography>
+          <Typography variant="h4" sx={styles.title}>
+            Campeonato Brasileiro A
+          </Typography>
         </Stack>
         <ChampionshipTable />
       </Box>

@@ -10,7 +10,9 @@ export function RankingPage() {
     <RootLayout>
       <Box>
         <Stack sx={styles.container} direction="row">
-          <Typography variant="h4">Artilharia</Typography>
+          <Typography variant="h4" sx={styles.title}>
+            Artilharia
+          </Typography>
         </Stack>
         <RankingTable />
       </Box>

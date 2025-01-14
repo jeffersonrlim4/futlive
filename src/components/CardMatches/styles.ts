@@ -1,16 +1,32 @@
+import { useTheme } from "@mui/material/styles";
 import { SxThemeProps } from "src/@types/types";
 
 export function useStyles() {
+  const theme = useTheme();
   return {
     cardContainer: {
       position: "relative",
     },
     live: {
       position: "absolute",
-      right: 5,
-      top: 5,
+      right: 10,
+      top: 10,
       backgroundColor: "red",
       color: "white",
+      width: 70,
+      height: 25,
+      fontSize: 12,
+      animation: "blink 1.2s infinite ease-in-out",
+      "@keyframes blink": {
+        "0%": { opacity: 1 },
+        "50%": { opacity: 0.2 },
+        "100%": { opacity: 1 },
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: 60,
+        height: 22,
+        fontSize: 10,
+      },
     },
     imgTeam: {
       width: 38,
