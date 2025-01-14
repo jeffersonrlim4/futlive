@@ -1,4 +1,4 @@
-import { NotFoundPage404 } from "@pages/404NotFound";
+import { NotFoundPage404 } from "@pages/NotFoundPage404";
 import { ChampionshipPage } from "@pages/Championship";
 import { DetailsPage } from "@pages/Details";
 import { HomePage } from "@pages/Home";
