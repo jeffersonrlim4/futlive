@@ -11,13 +11,13 @@ import {
 } from "@mui/material";
 import { useStyles } from "./styles";
 import { useNavigate } from "react-router-dom";
-import { ITodayGames } from "src/@types/ITodayGames";
+import { ILiveMatches } from "src/@types/ILiveMatches";
 import { teamsImage } from "@constants/teams";
 import { useAppDispatch } from "@store/hooks";
 import { updateDetailsMatch } from "@store/reducers/detailsMatch";
 
 interface CardMatchesProps {
-  data: ITodayGames;
+  data: ILiveMatches;
 }
 
 export function CardLiveMatches({ data }: CardMatchesProps) {

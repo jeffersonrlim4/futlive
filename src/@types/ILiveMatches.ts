@@ -1,6 +1,6 @@
 import { TeamName } from "@constants/teams";
 
-export interface ITodayGames {
+export interface ILiveMatches {
   Equipe1: TeamName;
   GolsEquipe1: number;
   Equipe2: TeamName;
