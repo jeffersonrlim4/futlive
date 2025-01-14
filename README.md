@@ -9,7 +9,11 @@ Projeto que mostra estatísticas de jogos ao vivo e lista de jogos de todos os c
 
 ## Executando o projeto
 
-Após ter as dependências e feito o clone do projeto execute o seguinte comando:
+Após ter as dependências e feito o clone do projeto configure o .env executando o comando abaixo:
+
+- cp .env.example .env
+
+Para abrir o projeto no navegador execute o comando abaixo:
 
 - npm run dev
 
