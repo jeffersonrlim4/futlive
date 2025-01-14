@@ -13,6 +13,7 @@ export function HomePage() {
   return (
     <RootLayout>
       <Stack spacing={4}>
+        {/*TODO: Criar componente LiveMatchContainer*/}
         <Box>
           <Typography variant="h5">Partidas ao vivo</Typography>
           <Grid2 container spacing={2} mt={2}>
@@ -25,6 +26,7 @@ export function HomePage() {
             ))}
           </Grid2>
         </Box>
+        {/*TODO: Criar componente NextMatchContainer*/}
         <Box>
           <Typography variant="h5">Partidas do dia</Typography>
           <Grid2 container spacing={2} mt={2}>

@@ -24,7 +24,11 @@ export function HeaderMenu() {
             FUTLIVE
           </Link>
         </Box>
-        <IconButton onClick={toggleDrawer(true)} sx={styles.btnResponsive}>
+        <IconButton
+          onClick={toggleDrawer(true)}
+          sx={styles.btnResponsive}
+          data-testid="button-menu"
+        >
           <Menu sx={styles.menuIcon} />
         </IconButton>
         {!isMobile && <DesktopMenu />}

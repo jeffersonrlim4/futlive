@@ -18,7 +18,7 @@ const jestConfig: JestConfigWithTsJest = {
     ],
   },
   moduleNameMapper: {
-    "@/(.*)": "<rootDir>/src/",
+    "^@components/(.*)$": "<rootDir>/src/components/$1",
     "\\.(gif|ttf|eot|svg|png|jpg|jpeg)$": "<rootDir>/.jest/mocks/fileMock.js",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
   },
@@ -29,7 +29,13 @@ const jestConfig: JestConfigWithTsJest = {
     },
   },
   collectCoverageFrom: ["src/**/*.{ts,tsx}", "!**/**/*.test.tsx"],
-  coveragePathIgnorePatterns: ["<rootDir>/node_modules/", "main.tsx"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "main.tsx",
+    "App.tsx",
+    "src/@types",
+    "src/constants",
+  ],
   coverageDirectory: "./coverage",
   coverageProvider: "v8",
   coverageReporters: ["html", "lcov", "text", "text-summary", "cobertura"],

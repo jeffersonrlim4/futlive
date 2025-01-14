@@ -11,7 +11,7 @@ interface MenuDrawerProps {
 export function DrawerMenu({ open, toggleDrawer }: MenuDrawerProps) {
   const styles = useStyles();
   return (
-    <Drawer open={open} onClose={toggleDrawer(false)}>
+    <Drawer open={open} onClose={toggleDrawer(false)} data-testid="drawer-menu">
       <Box role="presentation" sx={styles.drawerBox}>
         <Stack direction="column" gap={1.8}>
           <Link to="/" style={styles.link}>
