@@ -5,7 +5,7 @@ import {
   useMaterialReactTable,
 } from "material-react-table";
 import { useMemo, useState } from "react";
-import { ILances } from "src/@types/ILances";
+import { IStatistic } from "src/@types/IStatistic";
 import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
 import { useAppSelector } from "@store/hooks";
 import { TableSkeleton } from "@components/Skeletons/TableSkeleton";
@@ -17,7 +17,7 @@ export function ResultTable() {
     (selector) => selector.detailsMatch.selectedTeam
   );
 
-  const columns = useMemo<MRT_ColumnDef<ILances>[]>(
+  const columns = useMemo<MRT_ColumnDef<IStatistic>[]>(
     () => [
       {
         accessorKey: "Descricao",
