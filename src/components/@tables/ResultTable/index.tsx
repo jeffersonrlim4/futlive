@@ -8,10 +8,11 @@ import { useMemo, useState } from "react";
 import { ILances } from "src/@types/ILances";
 import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
 import { useAppSelector } from "@store/hooks";
+import { TableSkeleton } from "@components/Skeletons/TableSkeleton";
 
 export function ResultTable() {
   const [globalFilter, setGlobalFilter] = useState("");
-  const { data: dadosPartida } = useGetAllDadosPartida();
+  const { data: dadosPartida, isLoading } = useGetAllDadosPartida();
   const selectedTeam = useAppSelector(
     (selector) => selector.detailsMatch.selectedTeam
   );
@@ -65,5 +66,5 @@ export function ResultTable() {
     },
   });
 
-  return <MaterialReactTable table={table} />;
+  return isLoading ? <TableSkeleton /> : <MaterialReactTable table={table} />;
 }

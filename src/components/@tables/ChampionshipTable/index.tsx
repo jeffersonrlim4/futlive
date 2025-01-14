@@ -10,11 +10,12 @@ import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
 import { Stack, Typography } from "@mui/material";
 import { teamsImage } from "@constants/teams";
 import { useStyles } from "./styles";
+import { TableSkeleton } from "@components/Skeletons/TableSkeleton";
 
 export function ChampionshipTable() {
   const styles = useStyles();
   const [globalFilter, setGlobalFilter] = useState("");
-  const { data: dadosPartida } = useGetAllDadosPartida();
+  const { data: dadosPartida, isLoading } = useGetAllDadosPartida();
 
   const columns = useMemo<MRT_ColumnDef<IClassification>[]>(
     () => [
@@ -100,5 +101,5 @@ export function ChampionshipTable() {
     },
   });
 
-  return <MaterialReactTable table={table} />;
+  return isLoading ? <TableSkeleton /> : <MaterialReactTable table={table} />;
 }
