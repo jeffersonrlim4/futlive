@@ -14,7 +14,7 @@ interface NextMatchesProps {
   data: INextMatches;
 }
 
-export function NextMatches({ data }: NextMatchesProps) {
+export function CardNextMatches({ data }: NextMatchesProps) {
   const team = data.Texto.split(" ");
   const styles = useStyles();
   return (

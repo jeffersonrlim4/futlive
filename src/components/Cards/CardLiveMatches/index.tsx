@@ -20,7 +20,7 @@ interface CardMatchesProps {
   data: ITodayGames;
 }
 
-export function CardMatches({ data }: CardMatchesProps) {
+export function CardLiveMatches({ data }: CardMatchesProps) {
   const styles = useStyles();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
